@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1>Conditional Display App</h1>
+      <h1>Next-Problem</h1>
       <InputForm onSubmit={handleFormSubmit} />
       {data ? <QuestionList questions={data} /> : <p>No data to display</p>}
     </div>
