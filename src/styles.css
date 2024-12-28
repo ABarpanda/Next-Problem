@@ -51,22 +51,19 @@ body {
 .question-list {
   margin-top: 20px;
   color: #F5F7F8;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .question-item {
-  margin: 10px;
-  width: 30%;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;
   text-align: center;
   background-color: #212121;
   color: #F5F7F8;
-  /* display: flex; */
+  display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 10px; /* Space between elements */
 }
 
