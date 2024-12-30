@@ -4,10 +4,17 @@ const InputForm = ({ onSubmit }) => {
   const [handle, setHandle] = useState("");
   const [resourceId, setResourceId] = useState(1);
   const [methodNumber, setMethodNumber] = useState(101);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ handle, resourceId, methodNumber: parseInt(methodNumber, 10) });
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+      // alert("Form submitted successfully!");
+    }, 2000);
   };
 
   return (
@@ -40,6 +47,7 @@ const InputForm = ({ onSubmit }) => {
         />
       </label>
       <button type="submit">Submit</button>
+      {isLoading && <div className="loader" />}
     </form>
   );
 };

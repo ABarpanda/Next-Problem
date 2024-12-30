@@ -59,7 +59,7 @@ body {
   padding: 10px;
   border-radius: 4px;
   text-align: center;
-  background-color: #212121;
+  background-color: #333;
   color: #F5F7F8;
   display: flex;
   align-items: center;
@@ -86,4 +86,24 @@ body {
 
 .question-item button:hover {
   background-color: #1db954c9;
+}
+
+.loader {
+  margin-top: 10px;
+  align-self: center;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -5,6 +5,7 @@ import QuestionList from "./components/QuestionList";
 
 const App = () => {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleFormSubmit = async (inputData) => {
     console.clear();
@@ -39,7 +40,13 @@ const App = () => {
     <div className="app-container">
       <h1>Next-Problem</h1>
       <InputForm onSubmit={handleFormSubmit} />
-      {data ? <QuestionList questions={data} /> : <p>No data to display</p>}
+      {loading ? ( // Show loader while fetching
+        <div className="loader">Loading...</div>
+      ) : data ? ( // Show data if available
+        <QuestionList questions={data} />
+      ) : (
+        <p>No data to display</p>
+      )}
     </div>
   );
 };
