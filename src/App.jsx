@@ -10,7 +10,7 @@ const App = () => {
     console.clear();
 
     try {
-      const response = await fetch(`https://next-problem.vercel.app/${inputData.methodNumber}/?handle=${inputData.handle}&resource_id=${inputData.resourceId}`, {
+      const response = await fetch(`https://next-problem-api.vercel.app/${inputData.methodNumber}/?handle=${inputData.handle}&resource_id=${inputData.resourceId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

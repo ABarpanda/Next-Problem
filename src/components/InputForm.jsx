@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 const InputForm = ({ onSubmit }) => {
   const [handle, setHandle] = useState("");
-  const [resourceId, setResourceId] = useState("");
-  const [methodNumber, setMethodNumber] = useState("");
+  const [resourceId, setResourceId] = useState(1);
+  const [methodNumber, setMethodNumber] = useState(101);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,9 +24,9 @@ const InputForm = ({ onSubmit }) => {
       <label>
         Resource ID:
         <input
-          type="text"
+          type="number"
           value={resourceId}
-          onChange={(e) => setResourceId(e.target.value)}
+          onChange={(e) => setResourceId(Number(e.target.value))}
           required
         />
       </label>
@@ -35,7 +35,7 @@ const InputForm = ({ onSubmit }) => {
         <input
           type="number"
           value={methodNumber}
-          onChange={(e) => setMethodNumber(e.target.value)}
+          onChange={(e) => setMethodNumber(Number(e.target.value))}
           required
         />
       </label>
