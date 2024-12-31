@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import "./styles.css";
 import InputForm from "./components/InputForm";
 import QuestionList from "./components/QuestionList";
@@ -47,6 +49,8 @@ const App = () => {
       ) : (
         <p>No data to display</p>
       )}
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 };
