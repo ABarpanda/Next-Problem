@@ -46,8 +46,10 @@ const InputForm = ({ onSubmit }) => {
           required
         />
       </label>
-      <button type="submit">Submit</button>
-      {isLoading && <div className="loader" />}
+      <button type="submit" disabled={isLoading}>
+        {isLoading ? "Submitting..." : "Submit"}
+      </button>
+      {isLoading && <div className="loader"></div>}
     </form>
   );
 };

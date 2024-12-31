@@ -41,13 +41,12 @@ const App = () => {
   return (
     <div className="app-container">
       <h1>Next-Problem</h1>
-      <InputForm onSubmit={handleFormSubmit} />
-      {loading ? ( // Show loader while fetching
-        <div className="loader">Loading...</div>
-      ) : data ? ( // Show data if available
+      <InputForm onSubmit={handleFormSubmit} isLoading={loading} />
+      {loading && <div className="loader">Loading...</div>}
+      {!loading && data ? (
         <QuestionList questions={data} />
       ) : (
-        <p>No data to display</p>
+        !loading && <p>No data to display</p>
       )}
       <Analytics />
       <SpeedInsights />
