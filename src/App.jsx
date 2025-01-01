@@ -55,7 +55,7 @@ const App = () => {
       ) : (
         !loading && <p>No data to display</p>
       )}
-      {/* <Footer /> */}
+      <Footer />
       <Analytics />
       <SpeedInsights />
     </div>
