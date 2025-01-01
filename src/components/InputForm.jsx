@@ -8,13 +8,22 @@ const InputForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ handle, resourceId, methodNumber: parseInt(methodNumber, 10) });
+    
+    onSubmit({ 
+      handle, 
+      resourceId, 
+      methodNumber: parseInt(methodNumber, 10) 
+    });
+  
     setIsLoading(true);
-
+  
     setTimeout(() => {
       setIsLoading(false);
-      // alert("Form submitted successfully!");
-    }, 2000);
+    }, 2500);
+  };
+  
+  const handleButtonClick = (id) => {
+    setResourceId(id); // Update the resource ID
   };
 
   return (
@@ -28,15 +37,37 @@ const InputForm = ({ onSubmit }) => {
           required
         />
       </label>
-      <label>
-        Resource ID:
-        <input
-          type="number"
-          value={resourceId}
-          onChange={(e) => setResourceId(Number(e.target.value))}
-          required
-        />
-      </label>
+      <div className="resource-selector">
+        <p>Select Resource:</p>
+        <button
+          type="button"
+          className={`resource-button ${resourceId === 1 ? "selected" : ""}`}
+          onClick={() => handleButtonClick(1)}
+        >
+          Codeforces
+        </button>
+        <button
+          type="button"
+          className={`resource-button ${resourceId === 2 ? "selected" : ""}`}
+          onClick={() => handleButtonClick(2)}
+        >
+          Codechef
+        </button>
+        <button
+          type="button"
+          className={`resource-button ${resourceId === 102 ? "selected" : ""}`}
+          onClick={() => handleButtonClick(102)}
+        >
+          Leetcode
+        </button>
+        <button
+          type="button"
+          className={`resource-button ${resourceId === 93 ? "selected" : ""}`}
+          onClick={() => handleButtonClick(93)}
+        >
+          Atcoder
+        </button>
+      </div>
       <label>
         Method Number:
         <input
@@ -46,7 +77,7 @@ const InputForm = ({ onSubmit }) => {
           required
         />
       </label>
-      <button type="submit" disabled={isLoading}>
+      <button type="submit" disabled={isLoading} className="submit-button">
         {isLoading ? "Submitting..." : "Submit"}
       </button>
       {isLoading && <div className="loader"></div>}

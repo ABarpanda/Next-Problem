@@ -35,7 +35,7 @@ body {
   border-radius: 4px;
 }
 
-.input-form button {
+/* .input-form button {
   padding: 10px;
   background-color: #007bff;
   color: white;
@@ -46,7 +46,7 @@ body {
 
 .input-form button:hover {
   background-color: #0056b3;
-}
+} */
 
 .question-list {
   margin-top: 20px;
@@ -64,15 +64,48 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 10px; /* Space between elements */
+  gap: 10px;
 }
 
 .problem-name,
 .problem-rating {
   margin: 0;
-  flex: 1; /* Adjust width to fill available space */
+  flex: 1;
 }
 
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer li {
+  margin: 5px 0;
+}
+
+.social-links a {
+  margin: 0 10px;
+}
 
 .question-item button {
   padding: 5px 10px;
@@ -106,4 +139,56 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.input-form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resource-selector {
+  margin-bottom: 20px;
+}
+
+.resource-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.resource-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.resource-button.selected {
+  background-color: rgba(0, 123, 255, 0.8);
+  color: white;
+  font-weight: bold;
+  border-color: #1DB954;
+  border-width: 2px;
+}
+
+.resource-button:focus {
+  outline: 3px solid #1DB954;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }

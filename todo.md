@@ -1,0 +1,4 @@
+- [ ] Add contact info (Footer)
+- [ ] Add dark/light mode
+- [ ] Make Navbar
+- [ ] Add buttons instead of resource id

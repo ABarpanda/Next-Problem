@@ -4,10 +4,12 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import "./styles.css";
 import InputForm from "./components/InputForm";
 import QuestionList from "./components/QuestionList";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [resourceId, setResourceId] = useState(1); // Default to Codeforces
 
   const handleFormSubmit = async (inputData) => {
     console.clear();
@@ -41,13 +43,19 @@ const App = () => {
   return (
     <div className="app-container">
       <h1>Next-Problem</h1>
-      <InputForm onSubmit={handleFormSubmit} isLoading={loading} />
+      <InputForm
+        resourceId={resourceId}
+        setResourceId={setResourceId}
+        onSubmit={handleFormSubmit}
+        isLoading={loading}
+      />
       {loading && <div className="loader">Loading...</div>}
       {!loading && data ? (
         <QuestionList questions={data} />
       ) : (
         !loading && <p>No data to display</p>
       )}
+      {/* <Footer /> */}
       <Analytics />
       <SpeedInsights />
     </div>
