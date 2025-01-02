@@ -1,4 +1,5 @@
-- [ ] Add contact info (Footer)
+- [x] Add contact info (Footer)
 - [ ] Add dark/light mode
 - [ ] Make Navbar
-- [ ] Add buttons instead of resource id
+- [x] Add buttons instead of resource id
+- [ ] Make a newsletter subscription option
