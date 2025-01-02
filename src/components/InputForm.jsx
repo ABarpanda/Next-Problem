@@ -68,7 +68,7 @@ const InputForm = ({ onSubmit }) => {
           Atcoder
         </button>
       </div>
-      <label>
+      {/* <label>
         Method Number:
         <input
           type="number"
@@ -76,7 +76,7 @@ const InputForm = ({ onSubmit }) => {
           onChange={(e) => setMethodNumber(Number(e.target.value))}
           required
         />
-      </label>
+      </label> */}
       <button type="submit" disabled={isLoading} className="submit-button">
         {isLoading ? "Submitting..." : "Submit"}
       </button>
