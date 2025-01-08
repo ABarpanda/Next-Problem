@@ -3,3 +3,5 @@
 - [ ] Make Navbar
 - [x] Add buttons instead of resource id
 - [ ] Make a newsletter subscription option
+- [ ] Add OAuth
+- [x] make spinner disappear only when conetnt is loaded

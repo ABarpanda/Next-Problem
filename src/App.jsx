@@ -13,7 +13,8 @@ const App = () => {
 
   const handleFormSubmit = async (inputData) => {
     console.clear();
-
+    setLoading(true);
+  
     try {
       const response = await fetch(`https://next-problem-api.vercel.app/${inputData.methodNumber}/?handle=${inputData.handle}&resource_id=${inputData.resourceId}`, {
         method: "GET",
@@ -26,7 +27,6 @@ const App = () => {
       console.log("The response is -",response);
       const result = await response.json();
   
-      // Ensure data is an array
       if (Array.isArray(result)) {
         setData(result);
       } else {
@@ -36,6 +36,8 @@ const App = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
       setData([]);
+    } finally {
+      setLoading(false);
     }
   };
   
@@ -49,7 +51,7 @@ const App = () => {
         onSubmit={handleFormSubmit}
         isLoading={loading}
       />
-      {loading && <div className="loader">Loading...</div>}
+      {loading && <div className="loader"></div>}
       {!loading && data ? (
         <QuestionList questions={data} />
       ) : (

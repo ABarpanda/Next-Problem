@@ -14,16 +14,10 @@ const InputForm = ({ onSubmit }) => {
       resourceId, 
       methodNumber: parseInt(methodNumber, 10) 
     });
-  
-    setIsLoading(true);
-  
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
   };
   
   const handleButtonClick = (id) => {
-    setResourceId(id); // Update the resource ID
+    setResourceId(id);
   };
 
   return (
@@ -35,6 +29,7 @@ const InputForm = ({ onSubmit }) => {
           value={handle}
           onChange={(e) => setHandle(e.target.value)}
           required
+          autoFocus
         />
       </label>
       <div className="resource-selector">
@@ -78,7 +73,7 @@ const InputForm = ({ onSubmit }) => {
         />
       </label> */}
       <button type="submit" disabled={isLoading} className="submit-button">
-        {isLoading ? "Submitting..." : "Submit"}
+      {isLoading ? "Submitting..." : "Submit"}
       </button>
       {isLoading && <div className="loader"></div>}
     </form>
